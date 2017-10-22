@@ -32,8 +32,8 @@ def download_model(weight_url, models_info, custom_objectives=None):
 
 def __download_model( weights_url, custom_objectives=None):
     now = time.time()
-    one_day_ago = now - 60*60*24
-    if not os.path.exists(WEIGHTS_FILE) or os.path.getctime(WEIGHTS_FILE) > one_day_ago:
+    one_day_ago = 60*60*24
+    if not os.path.exists(WEIGHTS_FILE) or os.path.getctime(WEIGHTS_FILE) - now > one_day_ago:
         weights_filename = wget.download(weights_url)
         ensure_dir(WEIGHTS_FOLDER)
         shutil.move(weights_filename, WEIGHTS_FILE)
