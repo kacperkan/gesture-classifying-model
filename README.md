@@ -1,1 +1,1 @@
-"# gesture_classifying_model" 
+# gesture_classifying_model
