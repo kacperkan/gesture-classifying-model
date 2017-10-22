@@ -24,6 +24,5 @@ setup(name='gesture_classifying_model',
           'License :: OSI Approved :: MIT License',
           'Topic :: Software Development :: Libraries',
           'Topic :: Software Development :: Libraries :: Python Modules'
-
-      ]
+            ]
       )
