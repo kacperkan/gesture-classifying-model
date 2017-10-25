@@ -40,7 +40,7 @@ class GestureClassifier(object):
         inputs = X[-1]
         inputs = cv2.resize(inputs, (self.image_width, self.image_height))
         inputs = inputs.transpose((2, 0, 1)) / 255.
-        prediction = self.model.d(np.array([inputs]))[-1]
+        prediction = self.model.predict(np.array([inputs]))[-1]
         self.output = prediction
         self.context.clear()
         return self.output

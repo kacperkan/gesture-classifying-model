@@ -17,10 +17,9 @@ def ensure_dir(path):
 
 
 def download_config(config_file_url):
-    if not os.path.exists(CONFIG_FILE):
-        config_filename = wget.download(config_file_url)
-        ensure_dir(WEIGHTS_FOLDER)
-        shutil.move(config_filename, CONFIG_FILE)
+    config_filename = wget.download(config_file_url)
+    ensure_dir(WEIGHTS_FOLDER)
+    shutil.move(config_filename, CONFIG_FILE)
     with open(CONFIG_FILE, 'r') as conf_file:
         conf = yaml.load(conf_file)
     return conf

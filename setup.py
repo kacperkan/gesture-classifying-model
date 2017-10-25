@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='gesture_classifying_model',
-      version='0.1.1',
+      version='0.1.3',
       packages=find_packages(),
       install_requires=['keras==1.2.2',
                         'numpy>=1.11.1',
