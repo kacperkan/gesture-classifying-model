@@ -25,10 +25,19 @@ Pip package used in sign language translation system available in the following 
 4. First run will cause download of weights to `models/gesture_classifier` with weights in *.h5 format and config.yml
 5. Run appplication and start using system!
 
-## Classifier input info:
+## Classifier input info
 * image size = [None, 64, 64, 3] (batch size, height, width, channels)
     - where *None* means, it can be arbitrary number of frames, **only last frame is classified**
 * values range = [0, 255] in RGB (may be float or int)
+
+## Classifier ouput info
+* only letters are classified
+* available letters (both upper and lower)*:
+```angular2html
+abcdefghiklmnopqrstuwxy
+```
+<small>*the reason for such letters is that 'j' and 'z' both need movement, but classifier uses only singular frames</small>
+
 
 ## Requirements
 Used environment:
