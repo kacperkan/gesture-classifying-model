@@ -36,6 +36,8 @@ Pip package used in sign language translation system available in the following 
 ```angular2html
 abcdefghiklmnopqrstuwxy
 ```
+* output size = [None, 24], where under *None* is same number as in the input
+
 <small>*the reason for such letters is that 'j' and 'z' both need movement, but classifier uses only singular frames</small>
 
 
