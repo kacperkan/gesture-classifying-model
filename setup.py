@@ -7,7 +7,7 @@ except (IOError, ImportError):
 from setuptools import setup, find_packages
 
 setup(name='gesture_classifying_model',
-      version='0.1.4',
+      version='0.1.5',
       packages=find_packages(),
       install_requires=['keras==1.2.2',
                         'numpy>=1.11.1',
