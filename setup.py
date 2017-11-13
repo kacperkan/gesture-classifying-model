@@ -1,3 +1,9 @@
+try:
+    import pypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
+except (IOError, ImportError):
+    long_description = open('README.md').read()
+
 from setuptools import setup, find_packages
 
 setup(name='gesture_classifying_model',
@@ -11,6 +17,7 @@ setup(name='gesture_classifying_model',
       author='Kacper Kania',
       author_email='kacper1095@gmail.com',
       description='Classifying model for Sign Language Recognition System',
+      long_description=long_description,
       license='MIT',
       keywords='sign language classification',
       url='https://github.com/kacper1095/gesture_classifying_model',
