@@ -48,6 +48,9 @@ Used environment:
 * Keras 1.2.2
 
 ## Changelog
+* v0.1.3:
+    - documentation on PyPI
+
 * v0.1.2:
-    - first pypi availability
+    - first PyPI availability
      - downloading weights after one day, after next run
