@@ -11,15 +11,12 @@ class GestureClassifier(object):
     __OUT_KEY = 'gesture'
     __MODEL_URL_KEY = 'MODEL_URL'
     __MODEL_INFO = 'MODEL_INFO'
-    __MAX_CONTEXT_SIZE_KEY = 'MAX_CONTENT_SIZE'
     __IMAGE_INPUT_SHAPE_KEY = 'image_input_shape'
 
     def __init__(self, classification_time_interval=3):
         self.output = None
         self.config = downloader.download_config(GestureClassifier.__CONFIG_FILE_URL)
         self.out_key = GestureClassifier.__OUT_KEY
-        self.context = []
-        self.frames_ommitted = 0
         self.input_shape = self.config[GestureClassifier.__MODEL_INFO][GestureClassifier.__IMAGE_INPUT_SHAPE_KEY]
         self.image_width = self.input_shape[2]
         self.image_height = self.input_shape[1]
@@ -38,7 +35,6 @@ class GestureClassifier(object):
         inputs = inputs.transpose((2, 0, 1)) / 255.
         prediction = self.model.predict(np.array([inputs]))[-1]
         self.output = prediction
-        self.context.clear()
         return self.output
 
     def load_model(self):
