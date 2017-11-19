@@ -13,7 +13,7 @@ class GestureClassifier(object):
     __MODEL_INFO = 'MODEL_INFO'
     __IMAGE_INPUT_SHAPE_KEY = 'image_input_shape'
 
-    def __init__(self, classification_time_interval=3):
+    def __init__(self):
         self.output = None
         self.config = downloader.download_config(GestureClassifier.__CONFIG_FILE_URL)
         self.out_key = GestureClassifier.__OUT_KEY
@@ -22,14 +22,11 @@ class GestureClassifier(object):
         self.image_height = self.input_shape[1]
 
         self.model = self.load_model()
-        self.previous_classifying_timestamp = time.time()
-        self.classification_time_interval = classification_time_interval
 
     def transform(self, X, **transform_params):
-        time_dif = time.time() - self.previous_classifying_timestamp
-        if time_dif < self.classification_time_interval:
+        if X is None:
             return None
-        self.previous_classifying_timestamp = time.time()
+
         inputs = X[-1]
         inputs = cv2.resize(inputs, (self.image_width, self.image_height))
         inputs = inputs.transpose((2, 0, 1)) / 255.
