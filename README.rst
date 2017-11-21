@@ -22,4 +22,5 @@ You can finally predict probabilities of frame of cropped hands (letters are ind
 
 Letters order::
 
-     'abcdefghiklmnopqrstuvwxy' # alphabetical order for indices from 1 to 24 without
+     'abcdefghiklmnopqrstuvwxy' # alphabetical order for indices from 1 to 24 without letters requiring movement, like 'z' and 'j'
+
