@@ -1,7 +1,13 @@
 from setuptools import setup, find_packages
 
+
+def read_me():
+    with open('README.rst') as f:
+        return f.read()
+
+
 setup(name='gesture_classifying_model',
-      version='0.1.8',
+      version='0.1.9',
       packages=find_packages(),
       install_requires=['keras==1.2.2',
                         'numpy>=1.11.1',
@@ -11,6 +17,7 @@ setup(name='gesture_classifying_model',
       author='Kacper Kania',
       author_email='kacper1095@gmail.com',
       description='Classifying model for Sign Language Recognition System',
+      long_description=read_me(),
       license='MIT',
       keywords='sign language classification',
       url='https://github.com/kacper1095/gesture_classifying_model',
