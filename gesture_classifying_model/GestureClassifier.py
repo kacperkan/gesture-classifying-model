@@ -13,7 +13,7 @@ class GestureClassifier(object):
     __MODEL_INFO = 'MODEL_INFO'
     __IMAGE_INPUT_SHAPE_KEY = 'image_input_shape'
 
-    def __init__(self):
+    def __init__(self): 
         self.output = None
         self.config = downloader.download_config(GestureClassifier.__CONFIG_FILE_URL)
         self.out_key = GestureClassifier.__OUT_KEY
